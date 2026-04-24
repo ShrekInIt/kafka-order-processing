@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: order-service
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+app:
+  kafka:
+    topics:
+      orders: orders
+
+logging:
+  level:
+    com.example.orderservice: DEBUG
+    org.springframework.kafka: INFO
+
+server:
+  port: 8083
+
+

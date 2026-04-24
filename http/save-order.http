@@ -1,0 +1,9 @@
+POST http://localhost:8083/api/orders
+Content-Type: application/json
+
+{
+  "userId": "user-1",
+  "productCode": "BOOK-123",
+  "quantity": 2,
+  "totalPrice": 1800.00
+}
